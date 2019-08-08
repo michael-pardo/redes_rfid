@@ -58,20 +58,6 @@ class Auditoria(models.Model):
 
         super(Auditoria, self).save(*args, **kwargs)
 
-class Faccultad(Auditoria):
-    facultad = models.CharField(
-        max_length=20,
-        help_text="Facultad a la que pertenece..",
-        unique=True
-    )
-
-    def __str__(self):
-        return '{}'.format(self.user.get_full_name())
-
-    class Meta:
-        verbose_name = "Facultad"
-        verbose_name_plural = "Facultades"
-
 
 class Usuario(Auditoria):
     user = models.OneToOneField(
