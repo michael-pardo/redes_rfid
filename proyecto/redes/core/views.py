@@ -23,6 +23,6 @@ def agregar_registro(request):
             )
             return HttpResponse('Registro completado')
         else:
-            return HttpResponseBadRequest('Lector o tarjeta no registrado')
+            return HttpResponseBadRequest('Lector o tarjeta no registrado id={} lector={}'.format(id,codigo_lector))
     else:
         return HttpResponseBadRequest()
